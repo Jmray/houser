@@ -17,16 +17,16 @@ HouseRouter.get('/', (req, res) => {
 
 HouseRouter.post('/add', (req, res) => {
     const {
-        name,
+        propertyName,
         address,
         city,
         state,
         zip,
-        img,
+        imageUrl,
         mortgage,
         rent,
     } = req.body;
-    req.db.create_house([name, address, city, state, zip, img, mortgage, rent]).then(() => {
+    req.db.create_house([propertyName, address, city, state, zip, imageUrl, mortgage, rent]).then(() => {
 
         res.status(200).send()
     })

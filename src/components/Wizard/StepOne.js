@@ -1,4 +1,13 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import {
+    updatePropertyName,
+    updateAddress,
+    updateCity,
+    updateState,
+    updateZip,
+
+} from '../../reducers/houseReducer';
 
 class StepOne extends Component{
 
@@ -15,73 +24,68 @@ class StepOne extends Component{
         }
     }
 
-
-    handleInputChange(value, whatToChange){
-        switch(whatToChange){
-            default : 
-            break;
-            case "name" : 
-                this.setState({
-                    name: value,
-                });
-                break;
-            case "address" : 
-                this.setState({
-                    address: value,
-                });
-                break;
-            case "city" : 
-                this.setState({
-                    city: value,
-                });
-                break;
-            case "state" : 
-                this.setState({
-                    state: value,
-                });
-                break;
-            case "zipcode" : 
-                this.setState({
-                    zipcode: value,
-                });
-                break;
-        }
-    }
     render(){
+        const {
+            updatePropertyName,
+            updateAddress,
+            updateCity,
+            updateState,
+            updateZip,
+        } = this.props;
         return(
             <div>
                 <form>
                     <label >
                         name
-                        <input type='text' onChange={event => this.handleInputChange(event.target.value, 'name')}/>
+                        <input type='text' onChange={event => updatePropertyName(event.target.value)}/>
                     </label>
 
                     <label >
                         address
-                        <input type='text' onChange={event => this.handleInputChange(event.target.value, 'address')}/>
+                        <input type='text' onChange={event => updateAddress(event.target.value)}/>
                     </label>
 
                     <label >
                         city
-                        <input type='text' onChange={event => this.handleInputChange(event.target.value, 'city')}/>
+                        <input type='text' onChange={event => updateCity(event.target.value)}/>
                     </label>
 
                     <label >
                         state
-                        <input type='text' onChange={event => this.handleInputChange(event.target.value, 'state')}/>
+                        <input type='text' onChange={event => updateState(event.target.value)}/>
                     </label>
 
                     <label >
                         zipcode
-                        <input type='number' onChange={event => this.handleInputChange(event.target.value, 'zipcode')} id/>
+                        <input type='number' onChange={event => updateZip(event.target.value)} />
                     </label>
-                    
-                    
-                    <button type='submit'>Add Home</button>
                 </form>
+                <button type='button' onClick={() => this.props.history.push('/wizard/steptwo')}>next</button>
             </div>
         )
     }
 
 }
-export default StepOne;
+function mapStateToProps(reduxState){
+    const {
+        propertyName,
+        address,
+        city,
+        state,
+        zipcode,
+    } = reduxState;
+    return{
+        propertyName,
+        address,
+        city,
+        state,
+        zipcode,
+    }
+}
+export default connect(mapStateToProps, {
+    updatePropertyName,
+    updateAddress,
+    updateCity,
+    updateState,
+    updateZip,
+    })(StepOne);
