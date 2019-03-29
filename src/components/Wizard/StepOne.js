@@ -33,34 +33,34 @@ class StepOne extends Component{
             updateZip,
         } = this.props;
         return(
-            <div>
+            <div className='box wizard-step'>
                 <form>
-                    <label >
+                    <label className='label'>
                         name
-                        <input type='text' onChange={event => updatePropertyName(event.target.value)}/>
+                        <input className='input' type='text' onChange={event => updatePropertyName(event.target.value)}/>
                     </label>
 
-                    <label >
+                    <label className='label'>
                         address
-                        <input type='text' onChange={event => updateAddress(event.target.value)}/>
+                        <input className='input' type='text' onChange={event => updateAddress(event.target.value)}/>
                     </label>
 
-                    <label >
+                    <label className='label'>
                         city
-                        <input type='text' onChange={event => updateCity(event.target.value)}/>
+                        <input className='input' type='text' onChange={event => updateCity(event.target.value)}/>
                     </label>
 
-                    <label >
+                    <label className='label'>
                         state
-                        <input type='text' onChange={event => updateState(event.target.value)}/>
+                        <input className='input' type='text' onChange={event => updateState(event.target.value)}/>
                     </label>
 
-                    <label >
+                    <label className='label'>
                         zipcode
-                        <input type='number' onChange={event => updateZip(event.target.value)} />
+                        <input className='input' type='number' onChange={event => updateZip(event.target.value)} />
                     </label>
                 </form>
-                <button type='button' onClick={() => this.props.history.push('/wizard/steptwo')}>next</button>
+                <button className='button'type='button' onClick={() => this.props.history.push('/wizard/steptwo')}>next</button>
             </div>
         )
     }

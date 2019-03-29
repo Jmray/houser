@@ -20,7 +20,10 @@ function Wizard(props){
         clearState
     } = props;
     return(
-        <div>
+        <div className='container-div wizard'>
+            <Link to='/'>
+                <button className='button' onClick={() => clearState()}>Cancel</button>
+            </Link>
             <Switch>
                 
                 <Route path='/wizard/stepone' component={StepOne}/>
@@ -28,9 +31,6 @@ function Wizard(props){
                 <Route path='/wizard/stepthree' component={StepThree}/>
 
             </Switch>
-            <Link to='/'>
-                <button onClick={() => clearState()}>Cancel</button>
-            </Link>
             
         </div>
     );

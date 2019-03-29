@@ -38,8 +38,7 @@ class Dashboard extends Component{
         
         const houses = this.state.houses.map(house => {
             return(
-                <div key={house.id}>
-                
+                <div  key={house.id}>
                     <House 
                         deleteHouse={this.deleteHouse}
                         id={house.id} 
@@ -55,8 +54,16 @@ class Dashboard extends Component{
             )
         })
         return(
-            <div>
-                <button onClick={() => this.props.history.push('/wizard/stepone')}>Add New Property</button>
+            <div className='dashboard container-div'>
+            <div className='dash-subheader'>
+                        <h1 className='dash-subheader-letters'>Dashboard</h1>
+                        <div >
+                            <button className='button'
+                                onClick={() => this.props.history.push('/wizard/stepone')}>Add New Property
+                            </button>
+                            
+                        </div>
+                    </div>
                 {houses}
                 
             </div>

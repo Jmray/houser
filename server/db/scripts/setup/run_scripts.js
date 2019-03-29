@@ -3,11 +3,10 @@ const massive = require('massive');
 
 massive(process.env.DB_CONNECTION_STRING, { scripts: __dirname + '../'})
     .then(dbInstance => {
-        return dbInstance.query(
-            );
+        return dbInstance.create_houses_table;
     })
-    .then(memes => {
-        console.log(memes);
+    .then(() => {
+        console.log('created');
     })
     .catch(e => {
         console.error(e);

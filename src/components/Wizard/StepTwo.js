@@ -16,15 +16,15 @@ class StepTwo extends Component{
             updateImageUrl,
         } = this.props;
         return(
-            <div>
+            <div className='box wizard-step'>
                 <form>
-                    <label>
+                    <label className='label'>
                         Image URL:
-                        <input type='text' onChange={event => updateImageUrl(event.target.value)}></input>
+                        <input className='input' type='text' onChange={event => updateImageUrl(event.target.value)}></input>
                     </label>
                 </form>
-                <button type='button' onClick={() => this.props.history.push('/wizard/stepone')}>previous</button>
-                <button type='button' onClick={() => this.props.history.push('/wizard/stepthree')}>next</button>
+                <button className='button' type='button' onClick={() => this.props.history.push('/wizard/stepone')}>previous</button>
+                <button className='button' type='button' onClick={() => this.props.history.push('/wizard/stepthree')}>next</button>
             </div>
         )
     }

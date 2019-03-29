@@ -1,0 +1,69 @@
+.main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #e5f4ec;
+    
+}
+.main-header{
+    width: 100%;
+    height: 7vh;
+    position: fixed;
+    background-color: #519872;
+    z-index: 2;
+    
+
+    border-bottom: 1px lightgray solid;
+}
+.background{
+    background-color: aqua
+}
+.container-div{
+    margin-top: 7vh;
+    width: 800px;
+    background-color: white;
+}
+.wizard{
+    min-height: 100vh;
+}
+.wizard-step{
+    width: 75%;
+    margin: 10px auto;
+}
+.dashboard{
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+}
+.dash-subheader{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 700px;
+    height: 12vh;
+    border-bottom: 2px lightgrey solid;
+    border-radius: 2px;
+}
+.dash-subheader-letters{
+    font-size: 3em;
+}
+.house-card{
+        margin-top: 20px;
+        width: 700px;
+        
+}
+.logo{
+    margin-top: 3px;
+}
+.logo-letters{
+    font-weight: bold;
+    color: white;
+}
+
+
+
+

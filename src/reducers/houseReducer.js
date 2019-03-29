@@ -99,8 +99,8 @@ export function updateCity(city) {
     }
 export function updateState(state) {
     return {
-            type: state,
-            payload: STATE,
+            type: STATE,
+            payload: state,
         } 
     }
 export function updateZip(zip) {

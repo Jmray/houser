@@ -43,25 +43,24 @@ class StepThree extends Component{
         } = this.props;
         const suggestedRent = this.props.mortgage * 1.25;
         return(
-            <div>
-                <div>
-                    Suggested Rent:
-                    {suggestedRent}
+            <div className='box wizard-step'>
+                <div className='content is-medium'>
+                    Suggested Rent: {suggestedRent}
                 </div>
                 <form onSubmit={event => this.handleSubmit(event)}>
-                    <label>
+                    <label className='label'>
                         Monthly Mortgage Amount:
-                        <input type='number' onChange={event => updateMortgage(event.target.value)}></input>
+                        <input className='input' type='number' onChange={event => updateMortgage(event.target.value)}></input>
                     </label>
 
-                    <label>
+                    <label className='label'>
                         Desired Monthly Rent:
-                        <input type='number'onChange={event => updateRent(event.target.value)}></input>
+                        <input className='input' type='number'onChange={event => updateRent(event.target.value)}></input>
                     </label>
 
-                    <button type='submit'>Add Home</button>
+                <button className='button' type='button' onClick={() => this.props.history.push('/wizard/steptwo')}>previous</button>
+                <button className='button' type='submit'>Add Home</button>
                 </form>
-                <button type='button' onClick={() => this.props.history.push('/wizard/steptwo')}>previous</button>
             </div>
         )
     }

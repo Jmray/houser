@@ -3,7 +3,7 @@ CREATE TABLE "Houses" (
     name VARCHAR(30),
     address VARCHAR(100),
     city VARCHAR(100),
-    state VARCHAR(2),
+    state VARCHAR(10),
     zip INTEGER,
     img TEXT,
     mortgage DECIMAL,
