@@ -9,6 +9,7 @@ import StepThree from './StepThree';
 
 
 
+
     
     
     
@@ -28,7 +29,7 @@ function Wizard(props){
 
             </Switch>
             <Link to='/'>
-                <button onClick={clearState()}>Cancel</button>
+                <button onClick={() => clearState()}>Cancel</button>
             </Link>
             
         </div>

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import House from '../House/House';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
+
+
 
 
 class Dashboard extends Component{
@@ -55,9 +56,9 @@ class Dashboard extends Component{
         })
         return(
             <div>
-                Dashboard
+                <button onClick={() => this.props.history.push('/wizard/stepone')}>Add New Property</button>
                 {houses}
-                <Link to='/wizard/stepone'><button>Add New Property</button></Link>
+                
             </div>
         )
     }
