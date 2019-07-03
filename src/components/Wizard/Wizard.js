@@ -19,6 +19,8 @@ function Wizard(props){
     const {
         clearState
     } = props;
+    console.log(props)
+    const subRoute = props.match.path
     return(
         <div className='container-div wizard'>
             <Link to='/'>
@@ -26,9 +28,9 @@ function Wizard(props){
             </Link>
             <Switch>
                 
-                <Route path='/wizard/stepone' component={StepOne}/>
-                <Route path='/wizard/steptwo' component={StepTwo}/>
-                <Route path='/wizard/stepthree' component={StepThree}/>
+                <Route path={subRoute + '/stepone'} component={StepOne}/>
+                <Route path={subRoute + '/steptwo'} component={StepTwo}/>
+                <Route path={subRoute + '/stepthree'} component={StepThree}/>
 
             </Switch>
             

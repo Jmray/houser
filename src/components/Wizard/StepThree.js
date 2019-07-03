@@ -26,7 +26,7 @@ class StepThree extends Component{
 
         } = this.props;
 
-        axios.post('http://localhost:8000/api/houses/add', { propertyName, address, city, state, zip, imageUrl, mortgage, rent}).then((res) => {
+        axios.post('/api/houses/add', { propertyName, address, city, state, zip, imageUrl, mortgage, rent}).then((res) => {
             this.props.history.push('/');
         }
 

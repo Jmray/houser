@@ -20,7 +20,7 @@ class Dashboard extends Component{
        this.getHouses();
    }
     getHouses(){
-        axios.get('http://localhost:8000/api/houses').then(res => {
+        axios.get('/api/houses').then(res => {
             this.setState({
                 houses: res.data
                 })
@@ -29,7 +29,7 @@ class Dashboard extends Component{
     }
 
     deleteHouse(id){
-        axios.delete(`http://localhost:8000/api/houses/delete/${id}`).then(() => {
+        axios.delete(`/api/houses/delete/${id}`).then(() => {
             this.getHouses();
         })
     }
